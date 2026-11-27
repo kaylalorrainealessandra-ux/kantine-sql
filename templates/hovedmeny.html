@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Hovedmeny {% endblock %}
+
+{% block content %} 
+
+<h2> Her er Hovedmeny Til Skolens Kantina! </h2>
+<h3> Dette Er Faste Menyen Vår: </h3>
+
+<div class="fastmeny">
+    {% for rett in hovedmeny %}
+        <div class="fastmeny-rad">
+            <img src="{{ url_for('static', filename='img/' + rett.bilde) }}" alt="{{ rett.navn }}">
+            <p id="item-navn">{{ rett.navn }}</p>
+            <p id="item-pris">{{ rett.pris }}</p>
+            <p id="item-valuta">{{ rett.valuta}}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

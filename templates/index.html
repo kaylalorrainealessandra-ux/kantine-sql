@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block title %} Velkommen til skolens kantine {% endblock %}
+
+{% block content %}
+
+<h1> Velkommen Til Skolens Kantine!!</h1>
+
+<img class="welcome" src="{{ url_for('static', filename='img/akademiet.jpg') }}" alt="Skolens kantine">  
+
+<p> {{ navn }}</p>
+<!-- den bygger en vei til bildene isteden for at man hardcoder det med src. 
+ hvis du flytter på noe i produksjon sånn at path ikke blir feil-->
+
+{% endblock %}
+
+
+
