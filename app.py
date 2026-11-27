@@ -27,11 +27,13 @@ def register():
         conn = get_conn()
         cur = conn.cursor()
         cur.execute(
-            "INSERT INTO kunder (navn, brukernavn, passord) VALUES (%s, %s, %s)"
+            "INSERT INTO kunder (navn, brukernavn, passord) VALUES (%s, %s, %s)",
+            (navn,brukernavn,passord)
         )
         conn.commit()
         cur.close()
         conn.close()
+
         return redirect('/login')
     return render_template('register.html')
 
